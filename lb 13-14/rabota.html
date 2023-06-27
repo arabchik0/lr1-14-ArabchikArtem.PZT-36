@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Моя HTML-страница</title>
+  <style>
+    .styled-text {
+      color: red;
+      background-color: gray;
+      font-family: verdana;
+      font-size: 20px;
+      font-weight: bold;
+      border: 1px solid green;
+    }
+  </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      // Получение информации о статусе загрузки документа
+      var status = document.readyState;
+
+      // Вывод информации однократно через 5 секунд
+      setTimeout(function() {
+        console.log("Статус загрузки документа: " + status);
+      }, 5000);
+
+      // Удаление элемента No3 при щелчке по нему
+      var elementNo3 = document.getElementById("element3");
+      elementNo3.addEventListener("click", function() {
+        elementNo3.parentNode.removeChild(elementNo3);
+      });
+document.addEventListener("DOMContentLoaded", function() {
+      // Получение информации об имени компьютера через 4 секунды
+      setTimeout(function() {
+        var hostname = window.location.hostname;
+        document.getElementById("hostname").textContent = "Имя компьютера: " + hostname;
+      }, 4000);
+    });
+      // Применение стилей к элементу No1 после нажатия на кнопку
+      var applyStylesButton = document.getElementById("applyStyles");
+      applyStylesButton.addEventListener("click", function() {
+        var elementNo1 = document.getElementById("element1");
+        elementNo1.classList.add("styled-text");
+      });
+
+      // Получение информации об имени компьютера через 4 секунды
+      setTimeout(function() {
+        var hostname = window.location.hostname;
+        document.getElementById("hostname").textContent = "Информация получена: " + hostname;
+      }, 4000);
+    });
+  </script>
+ <script>
+    setTimeout(function() {
+      var xhr = new XMLHttpRequest();
+      xhr.open("GET", "https://api.ipify.org?format=json", true);
+      xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4 && xhr.status === 200) {
+          var response = JSON.parse(xhr.responseText);
+          var ipAddress = response.ip;
+          document.getElementById("hostname").textContent = "Информация получена: " + ipAddress;
+        }
+      };
+      xhr.send();
+    }, 4000);
+  </script>
+</head>
+<body>
+  <p id="element1">Арабчик Артём Александрович</p>
+  <a href="https://youtube.com">Ссылка на сайт</a>
+  <img src="foto/123.jpg" alt="Изображение">
+  <button id="applyStyles">Применить стили к элементу No1</button>
+  <p id="element3">Текст элемента No3</p>
+  <p id="hostname"></p>
+</body>
+</html>
