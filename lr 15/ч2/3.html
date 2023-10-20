@@ -1,0 +1,22 @@
+<html>
+<head>
+<style type='text/css'>
+#parl {
+  color: black;
+  cursor: pointer;
+}
+</style>
+<script type='text/javascript'>
+function start() {
+  document.getElementById('parl').style.color = 'red';
+}
+
+function stop() {
+  document.getElementById('parl').style.color = 'black';
+}
+</script>
+</head>
+<body>
+<p id='parl' onmouseover='start()' onmouseout='stop()'>Наведите на меня курсор мыши.</p>
+</body>
+</html>

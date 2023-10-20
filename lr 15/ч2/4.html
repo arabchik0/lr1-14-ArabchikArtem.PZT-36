@@ -1,0 +1,61 @@
+<html>
+<head>
+<style type="text/css">
+  .green-border {
+    border: 1px solid green;
+  }
+
+  .red-border {
+    border: 1px solid red;
+  }
+</style>
+<script type="text/javascript">
+  // Функция для изменения цвета текста абзаца на зеленый
+  function changeColorToGreen() {
+    document.getElementById('par1').style.color = 'green';
+  }
+
+  // Функция для изменения цвета текста абзаца на красный
+  function changeColorToRed() {
+    document.getElementById('par2').style.color = 'red';
+  }
+
+  // Функция для сброса цвета текста абзаца на черный
+  function resetColor() {
+    document.getElementById('par1').style.color = 'black';
+    document.getElementById('par2').style.color = 'black';
+  }
+
+  // Функция для добавления зеленой границы
+  function addGreenBorder() {
+    document.getElementById('par1').classList.add('green-border');
+    document.getElementById('par2').classList.add('green-border');
+  }
+
+  // Функция для добавления красной границы
+  function addRedBorder() {
+    document.getElementById('par1').classList.add('red-border');
+    document.getElementById('par2').classList.add('red-border');
+  }
+
+  // Функция для показа окна оповещения при загрузке страницы
+  window.onload = function() {
+    alert('Добро пожаловать в задание 1');
+  };
+
+  // Функция для показа окна оповещения при закрытии страницы
+  window.onbeforeunload = function() {
+    return 'Вы покидаете задание 1';
+  };
+</script>
+</head>
+<body>
+<p id="par1" onmouseover="resetColor()">Абзац 1</p>
+<p id="par2" onmouseover="resetColor()">Абзац 2</p>
+
+<input type="button" value="1-й but1" onclick="changeColorToGreen()" />
+<input type="button" value="2-й but2" ondblclick="changeColorToRed()" />
+<input type="button" value="1-й but3" onclick="addGreenBorder()" />
+<input type="button" value="2-й but4" ondblclick="addRedBorder()" />
+</body>
+</html>

@@ -1,0 +1,35 @@
+<html>
+<head>
+<script type="text/javascript">
+var c = 0;
+var t;
+var timerIsOn = 0;
+
+function timedCount() {
+  document.getElementById('txt').value = c;
+  c = c + 1;
+  t = setTimeout("timedCount()", 1000);
+}
+
+function startTimer() {
+  if (!timerIsOn) {
+    timerIsOn = 1;
+    timedCount();
+  }
+}
+
+function stopTimer() {
+  clearTimeout(t);
+  timerIsOn = 0;
+}
+</script>
+</head>
+<body>
+<form>
+  <input type="button" value="Начать отсчет!" onClick="startTimer()" />
+  <input type="button" value="Прекратить отсчет!" onClick="stopTimer()" />
+  <input type="text" id="txt" />
+</form>
+<p>Щелкните на кнопке "Начать отсчет!" для начала отсчета. Для прекращения отсчета, нажмите кнопку "Прекратить отсчет!".</p>
+</body>
+</html>

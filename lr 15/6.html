@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Пример с удалением обработчика события</title>
+</head>
+<body>
+
+<input type="button" id="myButton" value="Нажми меня">
+
+<script>
+function handler() {
+  alert('Спасибо!');
+}
+
+const input = document.getElementById('myButton');
+input.addEventListener('click', handler);
+
+// Где-то позже, если вы хотите удалить обработчик:
+input.removeEventListener('click', handler);
+</script>
+
+</body>
+</html>
